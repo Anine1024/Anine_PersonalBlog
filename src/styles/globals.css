@@ -91,3 +91,17 @@ body {
 .glow-hover:hover {
   box-shadow: 0 0 20px var(--color-accent-purple-glow);
 }
+
+/* ===== Code scroll animation ===== */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scroll-up {
+  animation: scrollUp 40s linear infinite;
+}

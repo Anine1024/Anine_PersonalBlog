@@ -36,8 +36,8 @@ export const SOCIAL_LINKS = {
 export const HERO_TITLE = 'Building My AI Digital Universe';
 
 export const HERO_SUBTITLE = [
-  'AI Frontend Developer',
-  'Coze Workflow Builder',
-  'LLM Practitioner',
-  'Low-Code Explorer',
+  'AI 前端开发工程师',
+  'Coze 工作流搭建',
+  'LLM 本地部署与微调',
+  '低代码平台探索者',
 ];

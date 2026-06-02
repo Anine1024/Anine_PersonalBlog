@@ -91,6 +91,7 @@
 .prose-content pre code {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.825rem;
+  color: #c9d1d9;
 }
 
 /* Inline code */
@@ -102,6 +103,10 @@
   font-size: 0.875em;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   color: var(--color-accent-cyan);
+}
+
+.light .prose-content code:not(pre code) {
+  color: #0d7377;
 }
 
 /* Tables */

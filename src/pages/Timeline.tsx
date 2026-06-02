@@ -18,8 +18,8 @@ const MILESTONES = [
   {
     year: '2024',
     title: 'Web 开发技术栈升级',
-    description: '深入学习 React Server Components、Next.js App Router 和现代前端工程化。开始用 Obsidian 构建第二大脑。',
-    tags: ['React', 'Next.js', 'Obsidian'],
+    description: '深入学习 React、TypeScript 和现代前端工程化，开始接触 AI 前端开发领域。',
+    tags: ['React', 'TypeScript', 'Vite'],
   },
   {
     year: '2023',

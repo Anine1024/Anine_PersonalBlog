@@ -8,18 +8,25 @@ import { Button } from '../ui/Button';
 
 const PROJECTS = [
   {
+    title: 'React Playground（React 在线编译平台）',
+    description: '开发现代的在线 React 代码编辑与预览平台，基于浏览器编译技术实现实时开发，无需本地环境配置。',
+    tech: ['React 19', 'TypeScript', 'Vite', 'Monaco Editor', 'Babel', 'Sass'],
+    source: 'https://gitee.com/Anine-repo/anine_react-playground',
+    demo: 'https://anine-react-playground.pages.dev/',
+  },
+  {
     title: '低代码可视化编辑器',
     description: '低代码可视化编辑平台，通过拖拽式组件操作、实时预览和自动代码生成功能，大幅提升 UI 开发效率。具备组件树视图、动态属性面板等核心功能。',
     tech: ['React 18', 'TypeScript', 'Vite', 'Zustand', 'ReactDnD', 'MonacoEditor'],
-    source: 'https://gitee.com/Anine-repo',
-    demo: 'https://example.com',
+    source: 'https://gitee.com/Anine-repo/Anine_lowcode-editor',
+    demo: 'https://anine-lowcode-editor.pages.dev/',
   },
   {
     title: 'AI_KidEdu 亲子教育平台',
     description: '面向低龄家庭的智能亲子教育平台，集成 AI 识物、语音生成、多轮智能对话。基于 Coze 平台构建多套智能体工作流，实现图像理解、TTS、语义交互等能力。',
     tech: ['React', 'TypeScript', 'Koa', 'Coze', 'JWT', 'Ant Design Mobile'],
-    source: 'https://gitee.com/Anine-repo',
-    demo: 'https://example.com',
+    source: 'https://gitee.com/Anine-repo/ai_-kid-edu',
+    demo: 'https://aikidedu-production.up.railway.app/',
   },
 ];
 

@@ -24,8 +24,8 @@ export function Navbar({ scrolled }: NavbarProps) {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
-          ? 'glass shadow-lg shadow-black/5'
-          : 'bg-transparent border-b border-transparent',
+          ? 'bg-bg-primary/80 backdrop-blur-xl border-b border-border shadow-lg shadow-black/5'
+          : 'bg-bg-primary/40 backdrop-blur-md border-b border-transparent',
       )}
     >
       <div className="max-w-7xl mx-auto px-6 h-[64px] flex items-center justify-between">
@@ -49,17 +49,17 @@ export function Navbar({ scrolled }: NavbarProps) {
                   key={item.href}
                   to={item.href}
                   className={cn(
-                    'relative px-3.5 py-2 text-sm font-medium rounded-lg transition-colors duration-200',
+                    'relative px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-200',
                     isActive
-                      ? 'text-text-primary'
-                      : 'text-text-secondary hover:text-text-primary',
+                      ? 'text-accent-purple-light'
+                      : 'text-text-secondary hover:text-text-primary hover:bg-bg-card/50',
                   )}
                 >
                   {item.label}
                   {isActive && (
                     <motion.div
                       layoutId="nav-indicator"
-                      className="absolute inset-0 bg-bg-card border border-border rounded-lg -z-10"
+                      className="absolute inset-0 bg-accent-purple/10 border border-accent-purple/20 rounded-lg"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -70,19 +70,19 @@ export function Navbar({ scrolled }: NavbarProps) {
         )}
 
         {/* Actions */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <ThemeToggle />
           <a
             href="https://gitee.com/Anine-repo"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg text-text-secondary hover:text-text-primary transition-colors"
+            className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-card/50 transition-colors"
           >
             <Github size={18} />
           </a>
           <button
             onClick={openSearch}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-bg-card border border-border text-text-secondary hover:text-text-primary hover:border-border-hover transition-colors text-sm"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-bg-card border border-border text-text-secondary hover:text-text-primary hover:border-border-hover transition-all text-sm"
           >
             <Search size={14} />
             <span className="hidden sm:inline">Search</span>
@@ -109,7 +109,7 @@ export function Navbar({ scrolled }: NavbarProps) {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden glass border-t border-glass-border"
+            className="overflow-hidden bg-bg-primary/95 backdrop-blur-xl border-t border-border"
           >
             <div className="px-6 py-4 flex flex-col gap-1">
               {NAV_ITEMS.map((item) => {

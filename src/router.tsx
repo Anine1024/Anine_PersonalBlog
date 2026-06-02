@@ -8,7 +8,6 @@ import { AILab } from './pages/AILab';
 import { Garden } from './pages/Garden';
 import { Timeline } from './pages/Timeline';
 import { About } from './pages/About';
-import { Contact } from './pages/Contact';
 import { NotFound } from './pages/NotFound';
 
 export const router = createBrowserRouter([
@@ -24,7 +23,6 @@ export const router = createBrowserRouter([
       { path: 'garden', element: <Garden /> },
       { path: 'timeline', element: <Timeline /> },
       { path: 'about', element: <About /> },
-      { path: 'contact', element: <Contact /> },
       { path: '*', element: <NotFound /> },
     ],
   },

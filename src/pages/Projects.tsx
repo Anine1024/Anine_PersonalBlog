@@ -9,13 +9,29 @@ import { Button } from '../components/ui/Button';
 
 const PROJECTS = [
   {
+    id: 'react-playground',
+    title: 'React Playground（React 在线编译平台）',
+    description: '开发现代的在线 React 代码编辑与预览平台，基于浏览器编译技术实现实时开发，无需本地环境配置。',
+    tech: ['React 19', 'TypeScript', 'Vite', 'Monaco Editor', '@babel/standalone', 'Sass', 'Allotment'],
+    category: 'frontend',
+    source: 'https://gitee.com/Anine-repo/anine_react-playground',
+    demo: 'https://anine-react-playground.pages.dev/',
+    highlights: [
+      '基于 @babel/standalone 完成 TSX/JSX 即时转译，300ms 内代码修改自动编译与预览刷新',
+      '集成 Monaco Editor + @typescript/ata 实现 TypeScript 实时类型检查与第三方库智能提示',
+      '基于 React 19 + TypeScript + Vite 构建，CSS Modules + Sass 实现样式隔离',
+      '拖拽式响应式布局，Allotment 实现编辑区与预览区比例自由调整',
+      '支持主题自动切换（深色/浅色）与代码一键打包导出（ZIP）',
+    ],
+  },
+  {
     id: 'lowcode-editor',
     title: '低代码可视化编辑器',
     description: '低代码可视化编辑平台，通过拖拽式组件操作、实时预览和自动代码生成功能，大幅提升 UI 开发效率。具备组件树视图、动态属性面板等核心功能。',
     tech: ['React 18', 'TypeScript', 'Vite', 'Ant Design', 'Zustand', 'ReactDnD', 'TailwindCSS', 'MonacoEditor'],
     category: 'frontend',
-    source: 'https://gitee.com/Anine-repo',
-    demo: 'https://example.com',
+    source: 'https://gitee.com/Anine-repo/Anine_lowcode-editor',
+    demo: 'https://anine-lowcode-editor.pages.dev/',
     highlights: [
       '组件化架构，dev/prod 双版本，JSON → 组件递归渲染',
       'ReactDnD 拖拽交互 + 自定义 Hook 封装',
@@ -29,8 +45,8 @@ const PROJECTS = [
     description: '面向低龄家庭的智能亲子教育平台，为孩子提供沉浸式互动学习体验，集成 AI 识物、语音生成、多轮智能对话等能力。',
     tech: ['React', 'TypeScript', 'Koa', 'JWT', 'bcrypt', 'Axios', 'Ant Design Mobile', 'Vite'],
     category: 'ai',
-    source: 'https://gitee.com/Anine-repo',
-    demo: 'https://example.com',
+    source: 'https://gitee.com/Anine-repo/ai_-kid-edu',
+    demo: 'https://aikidedu-production.up.railway.app/',
     highlights: [
       '基于 Coze 平台设计多套智能体工作流，实现图像理解（OCR/识图）、语音生成、多轮对话',
       '封装天气查询、文件目录查询等 Tool 函数，大模型自动调用工具',

@@ -118,7 +118,7 @@ async function processMarkdown(filePath: string): Promise<{ frontmatter: Record<
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeShiki, {
       theme: 'github-dark',
-      langs: ['js', 'ts', 'tsx', 'python', 'html', 'css', 'bash', 'json', 'yaml', 'markdown'],
+      langs: ['js', 'ts', 'tsx', 'python', 'html', 'css', 'bash', 'json', 'yaml', 'markdown', 'http', 'nginx'],
     })
     .use(rehypeStringify, { allowDangerousHtml: true });
 
@@ -149,14 +149,28 @@ async function build() {
   const posts: Post[] = [];
   const snippets: GardenSnippet[] = [];
 
+  // Recursively collect .md files from blog directory (supports subdirectories like imported/)
+  function collectMdFiles(dir: string): string[] {
+    const results: string[] = [];
+    if (!fs.existsSync(dir)) return results;
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        results.push(...collectMdFiles(fullPath));
+      } else if (entry.name.endsWith('.md')) {
+        results.push(fullPath);
+      }
+    }
+    return results;
+  }
+
   // Process blog posts
-  if (fs.existsSync(BLOG_DIR)) {
-    const blogFiles = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith('.md'));
-    for (const file of blogFiles) {
-      const filePath = path.join(BLOG_DIR, file);
+  const blogFiles = collectMdFiles(BLOG_DIR);
+  for (const filePath of blogFiles) {
       const { frontmatter, html } = await processMarkdown(filePath);
 
-      const slug = (frontmatter.slug as string) || slugify(path.basename(file, '.md'));
+      const slug = (frontmatter.slug as string) || slugify(path.basename(filePath, '.md'));
       const wordCount = getWordCount(html);
       const headings = extractHeadings(html);
 
@@ -164,7 +178,7 @@ async function build() {
         slug,
         frontmatter: {
           slug,
-          title: (frontmatter.title as string) || path.basename(file, '.md'),
+          title: (frontmatter.title as string) || path.basename(filePath, '.md'),
           date: (frontmatter.date as string) || new Date().toISOString().split('T')[0],
           updated: frontmatter.updated as string | undefined,
           category: (frontmatter.category as string) || 'Uncategorized',
@@ -183,7 +197,6 @@ async function build() {
 
     // Sort by date, newest first
     posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
-  }
 
   // Process garden snippets
   if (fs.existsSync(GARDEN_DIR)) {

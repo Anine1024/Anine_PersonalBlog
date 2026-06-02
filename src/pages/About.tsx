@@ -4,6 +4,7 @@ import { Container } from '../components/ui/Container';
 import { Card } from '../components/ui/Card';
 import { Tag } from '../components/ui/Tag';
 import { Avatar } from '../components/ui/Avatar';
+import { SOCIAL_LINKS } from '@/lib/constants';
 
 const SKILL_TREE = [
   {
@@ -43,22 +44,36 @@ export function About() {
           className="max-w-2xl mx-auto text-center mb-16"
         >
           <Avatar size="lg" className="mx-auto mb-6" />
-          <h1 className="text-4xl font-bold text-text-primary tracking-tight">王志凯</h1>
+          <h1 className="text-4xl font-bold text-text-primary tracking-tight">Anine</h1>
           <p className="mt-2 text-accent-purple-light font-medium">AI 前端开发工程师</p>
           <p className="mt-4 text-text-secondary leading-relaxed max-w-lg mx-auto">
             软件工程本科毕业，专注于 AI 与前端开发的交叉领域。
             具备独立开发 React 项目的经验，熟悉 Coze 工作流搭建与 LLM 本地部署，
             致力于将 AI 能力融入前端交互体验。
           </p>
+
+          {/* Info tags row */}
           <div className="mt-6 flex flex-wrap gap-2 justify-center">
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="px-3 py-1 text-xs rounded-full bg-bg-card border border-border text-text-secondary"
-            >
+            <span className="px-3 py-1 text-xs rounded-full bg-bg-card border border-border text-text-secondary">
               东华理工大学 · 软件工程 · 2021-2025
-            </motion.span>
+            </span>
+            <a
+              href={SOCIAL_LINKS.email}
+              className="px-3 py-1 text-xs rounded-full bg-bg-card border border-border text-text-secondary hover:text-accent-purple-light hover:border-accent-purple/30 transition-colors"
+            >
+              2386415771@qq.com
+            </a>
+            <span className="px-3 py-1 text-xs rounded-full bg-bg-card border border-border text-text-secondary">
+              190 0707 2048
+            </span>
+            <a
+              href={SOCIAL_LINKS.gitee}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1 text-xs rounded-full bg-bg-card border border-border text-text-secondary hover:text-accent-purple-light hover:border-accent-purple/30 transition-colors"
+            >
+              gitee.com/Anine-repo
+            </a>
           </div>
         </motion.div>
 
