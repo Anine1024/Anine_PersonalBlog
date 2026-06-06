@@ -47,6 +47,7 @@ const PROJECTS = [
     category: 'ai',
     source: 'https://gitee.com/Anine-repo/ai_-kid-edu',
     demo: 'https://aikidedu-production.up.railway.app/',
+    testAccount: { phone: '13800000000', password: '123456' },
     highlights: [
       '基于 Coze 平台设计多套智能体工作流，实现图像理解（OCR/识图）、语音生成、多轮对话',
       '封装天气查询、文件目录查询等 Tool 函数，大模型自动调用工具',
@@ -141,6 +142,18 @@ export function Projects() {
                       </Button>
                     </div>
                   </div>
+
+                  {project.testAccount && (
+                    <div className="mt-4 pt-4 border-t border-border flex items-center gap-3 text-xs">
+                      <div className="flex items-center gap-1.5 text-accent-purple-light shrink-0">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                        <span className="font-medium">测试账号</span>
+                      </div>
+                      <span className="text-text-primary font-mono">{project.testAccount.phone}</span>
+                      <span className="text-text-secondary">/</span>
+                      <span className="text-text-primary font-mono">{project.testAccount.password}</span>
+                    </div>
+                  )}
                 </Card>
               </motion.div>
             ))}

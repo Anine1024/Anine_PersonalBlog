@@ -5,7 +5,6 @@ date: "2026-04-15"
 category: "人工智能"
 tags: ["Prompt Engineering", "LLM", "GPT", "最佳实践"]
 excerpt: "经过实战检验的 Prompt Engineering 模式集合 —— 从思维链到思维树，以及更高阶的技巧。"
-coverImage: "/images/blog/placeholder-cover.svg"
 readingTime: 9
 featured: false
 ---

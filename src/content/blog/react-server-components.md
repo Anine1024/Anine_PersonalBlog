@@ -5,7 +5,6 @@ date: "2026-05-10"
 category: "前端开发"
 tags: ["React", "Next.js", "RSC", "TypeScript"]
 excerpt: "深入解析 React Server Components —— 它是什么、为什么重要，以及如何在你的应用中高效使用。"
-coverImage: "/images/blog/placeholder-cover.svg"
 readingTime: 10
 featured: true
 ---

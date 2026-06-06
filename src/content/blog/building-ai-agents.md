@@ -5,7 +5,6 @@ date: "2026-05-15"
 category: "人工智能"
 tags: ["AI Agent", "Python", "LangChain", "LLM"]
 excerpt: "一步步带你构建能够推理、使用工具、完成多步骤任务的自主 AI Agent。"
-coverImage: "/images/blog/placeholder-cover.svg"
 readingTime: 8
 featured: true
 ---

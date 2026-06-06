@@ -5,7 +5,6 @@ date: "2026-03-20"
 category: "前端开发"
 tags: ["TypeScript", "JavaScript", "设计模式", "类型系统"]
 excerpt: "探索高级 TypeScript 模式：模板字面量类型、可辨识联合类型与构建器模式的实战应用。"
-coverImage: "/images/blog/placeholder-cover.svg"
 readingTime: 6
 featured: false
 ---
